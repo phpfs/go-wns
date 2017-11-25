@@ -151,9 +151,9 @@ func NewTile() *TemplateTile {
 	return tl
 }
 
-func (w *WNS) SentTile(uri string, tile *TemplateTile) bool {
+func (w *WNS) SendTile(uri string, tile *TemplateTile) bool {
 	if len(tile.Output) <= 0 {
-		log.Println("Error: You can't sent a Tile that wasn't built using msg.Build()!")
+		log.Println("Error: You can't send a Tile that wasn't built using msg.Build()!")
 		return false
 	} else if len(uri) < 25 {
 		log.Println("Error: Your URI isn't long enough!")
@@ -163,7 +163,7 @@ func (w *WNS) SentTile(uri string, tile *TemplateTile) bool {
 	}
 }
 
-func (tl *TemplateTile) setTile(tile string) bool {
+func (tl *TemplateTile) SetTile(tile string) bool {
 	if len(tile) > 5 {
 		tl.Tile = tile
 		return true
